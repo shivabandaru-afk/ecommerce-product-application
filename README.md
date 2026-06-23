@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # E-Commerce Product Store
 
 A full-stack e-commerce application built with React, Node.js/Express, and MongoDB.
