@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback, useMemo } from 'react';
 import axios from 'axios';
 import ProductCard from './ProductCard';
 import './ProductList.css';
@@ -6,7 +6,7 @@ import { CartContext } from '../context/CartContext';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [/*filteredProducts*/, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -15,9 +15,22 @@ const ProductList = () => {
 
   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
+  const fetchProducts = useCallback(async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(`${API_URL}/products`);
+      setProducts(response.data.data || []);
+    } catch (error) {
+      console.error('Error fetching products:', error);
+      setProducts([]);
+    } finally {
+      setLoading(false);
+    }
+  }, [API_URL]);
+
   useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [fetchProducts]);
 
   const fetchProducts = async () => {
     try {
@@ -33,19 +46,14 @@ const ProductList = () => {
     }
   };
 
-  useEffect(() => {
-    filterProducts();
-  }, [search, selectedCategory, priceRange, products]);
-
-  const filterProducts = () => {
-    let filtered = products.filter(product => {
+  const filteredProducts = useMemo(() => {
+    return products.filter(product => {
       const matchesSearch = product.name.toLowerCase().includes(search.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
       const matchesPrice = product.price >= priceRange.min && product.price <= priceRange.max;
       return matchesSearch && matchesCategory && matchesPrice;
     });
-    setFilteredProducts(filtered);
-  };
+  }, [products, search, selectedCategory, priceRange]);
 
   const categories = ['All', 'Electronics', 'Clothing', 'Books', 'Home', 'Sports', 'Toys', 'Other'];
 

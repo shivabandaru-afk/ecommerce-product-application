@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './AdminPanel.css';
 
@@ -20,9 +20,21 @@ const AdminPanel = ({ onLogout }) => {
   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
   const token = localStorage.getItem('adminToken');
 
-  React.useEffect(() => {
+  const fetchProducts = useCallback(async () => {
+    try {
+      setLoading(true);
+      const response = await axios.get(`${API_URL}/products`);
+      setProducts(response.data.data || []);
+    } catch (error) {
+      setMessage('Error fetching products');
+    } finally {
+      setLoading(false);
+    }
+  }, [API_URL]);
+
+  useEffect(() => {
     fetchProducts();
-  }, []);
+  }, [fetchProducts]);
 
   const fetchProducts = async () => {
     try {
