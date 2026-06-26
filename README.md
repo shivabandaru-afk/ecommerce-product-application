@@ -5,7 +5,7 @@ A full-stack e-commerce web application built using the MERN stack that allows u
 ---
 
 ##  Live Demo
-https://your-deployed-link.vercel.app
+https://ecommerce-product-application-hqnd.vercel.app/
 
 ---
 
