@@ -1,17 +1,17 @@
-# 🛒 E-Commerce Product Application (MERN Stack)
+# E-Commerce Product Application (MERN Stack)
 
 A full-stack e-commerce web application built using the MERN stack that allows users to browse, search, and filter products, manage a shopping cart, and enables admins to perform secure product management with role-based authentication.
 
 ---
 
-## 🚀 Live Demo
+##  Live Demo
 https://your-deployed-link.vercel.app
 
 ---
 
-## 📌 Features
+##  Features
 
-### 👤 User Features
+###  User Features
 - User registration and login system
 - Browse all products in a responsive UI
 - View detailed product pages
@@ -19,7 +19,7 @@ https://your-deployed-link.vercel.app
 - Filter products by category and price
 - Add/remove products from shopping cart
 
-### 🛠️ Admin Features
+###  Admin Features
 - Secure JWT-based authentication
 - Role-based access control (Admin/User)
 - Add new products
@@ -29,7 +29,7 @@ https://your-deployed-link.vercel.app
 
 ---
 
-## 🧰 Tech Stack
+##  Tech Stack
 
 **Frontend:**
 - React.js
@@ -77,7 +77,7 @@ E-Commerce-Product-Application/
 
 ---
 
-## 🔐 Authentication Flow
+##  Authentication Flow
 
 1. User registers or logs in
 2. Server validates credentials
@@ -87,7 +87,7 @@ E-Commerce-Product-Application/
 
 ---
 
-## 🔍 API Endpoints
+##  API Endpoints
 
 ### Auth
 - POST `/api/auth/register` → Register user  
@@ -107,14 +107,14 @@ E-Commerce-Product-Application/
 
 ---
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
-### 1️⃣ Clone the repository
+### 1️ Clone the repository
 ```bash
 git clone https://github.com/hemanth-chukka/ecommerce-product-application.git
 ```
 
-### 2️⃣ Install dependencies
+### 2️ Install dependencies
 
 #### Backend
 ```bash
@@ -130,7 +130,7 @@ npm install
 
 ---
 
-### 3️⃣ Environment Variables
+### 3️ Environment Variables
 
 Create a `.env` file in the server folder:
 
@@ -142,7 +142,7 @@ PORT=5000
 
 ---
 
-### 4️⃣ Run the application
+### 4️ Run the application
 
 #### Start backend
 ```bash
@@ -158,7 +158,7 @@ npm start
 
 ---
 
-## 📈 Future Improvements
+## Future Improvements
 - Payment gateway integration (Razorpay / Stripe)
 - Wishlist feature
 - Order history tracking
@@ -168,7 +168,7 @@ npm start
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Hemanth Kumar Chukka**
 
