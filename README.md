@@ -168,12 +168,3 @@ npm start
 
 ---
 
-##  Author
-
-**Hemanth Kumar Chukka**
-
-- GitHub: https://github.com/hemanth-chukka  
-- LinkedIn: www.linkedin.com/in/hemanth-chukka-a0664137a  
-- Email: hemuchukka147@gmail.com  
-
----
